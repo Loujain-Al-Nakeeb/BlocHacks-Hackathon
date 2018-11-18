@@ -4,7 +4,7 @@ import java.io.File;
 
 public class Furniture extends Goods {
 
-   private Furniture type;
+   private FurnitureType type;
    private Size size;
    private Material material;
    private Colour colour;

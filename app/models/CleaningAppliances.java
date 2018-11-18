@@ -2,7 +2,7 @@ package models;
 
 public class CleaningAppliances extends Appliances {
 
-    private CleaningAppliances type;
+    private CleaningAppliancesType type;
 
 
 }

@@ -8,7 +8,7 @@ public class Clothing extends Goods {
     private Material material;
     private Colour colour;
     private Size size;
-    private Clothing type;
+    private ClothingType type;
     private Brand brand;
 
 }

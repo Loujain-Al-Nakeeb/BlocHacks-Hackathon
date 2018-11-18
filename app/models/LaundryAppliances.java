@@ -2,6 +2,6 @@ package models;
 
 public class LaundryAppliances extends Appliances {
 
-    private LaundryAppliances type;
+    private LaundryAppliancesType type;
 
 }

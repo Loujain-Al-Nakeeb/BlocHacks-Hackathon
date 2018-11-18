@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class DeskSupplies extends Goods {
+public class CleaningSuppliesType extends Model {
     @Id private int id;
     @Constraints.Required String en;
     @Constraints.Required String fr;
