@@ -4,6 +4,6 @@ import java.io.File;
 
 public class Toys extends Goods {
 
-    private Toys type;
+    private ToysType type;
 
 }

@@ -2,5 +2,5 @@ package models;
 
 public class NonPerishable {
 
-    private NonPerishable type;
+    private NonPerishableType type;
 }
