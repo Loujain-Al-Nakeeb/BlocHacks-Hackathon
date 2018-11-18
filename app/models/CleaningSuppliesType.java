@@ -10,7 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CleaningSuppliesType extends Supplies {
+public class CleaningSuppliesType extends Model {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
     @Constraints.Required private String en;
     @Constraints.Required private String fr;

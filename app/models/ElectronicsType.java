@@ -4,16 +4,15 @@ import io.ebean.Finder;
 import io.ebean.Model;
 import play.data.validation.Constraints;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.LinkedList;
 
 @Entity
-public class ElectronicsType extends Electronics {
+public class ElectronicsType extends Model {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
     @Constraints.Required private String en;
     @Constraints.Required private String fr;
+    @OneToMany(mappedBy = "ElectronicsType") LinkedList<Electronics> electronics;
 
     public static Finder<Integer, ElectronicsType> find = new Finder<>(ElectronicsType.class);
 

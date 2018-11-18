@@ -1,19 +1,18 @@
 package models;
-
 import io.ebean.Finder;
 import io.ebean.Model;
 import play.data.validation.Constraints;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.LinkedList;
 
 @Entity
-public class ToysType extends Toys {
+public class ToysType extends Model {
+
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
     @Constraints.Required private String en;
     @Constraints.Required private String fr;
+	@OneToMany(mappedBy = "ToysType") LinkedList<Toys> Toys;
 
     public static Finder<Integer, ToysType> find = new Finder<>(ToysType.class);
 
