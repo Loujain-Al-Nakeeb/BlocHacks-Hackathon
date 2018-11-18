@@ -5,5 +5,5 @@ public class CookingLesson extends Services {
 
     private boolean isDessert;
 
-    private Cooking food;
+    private Food food;
 }

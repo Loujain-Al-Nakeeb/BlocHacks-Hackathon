@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Food extends Model {
+public class Size extends Model {
     @Id private int id;
     @Constraints.Required String en;
     @Constraints.Required String fr;
