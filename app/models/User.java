@@ -1,6 +1,6 @@
 package models;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
+import io.ebean.Finder;
 import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
@@ -20,6 +20,9 @@ public class User {
 	@Constraints.Required private String postalCode;
 	@ManyToMany private ArrayList<Language> languages;
 
+	public static Finder<String, User> find = new Finder<>(User.class);
+
+	public User() {}
 	public User(String uName, @Constraints.Required String password, @Constraints.Required String fName, @Constraints.Required String lName, boolean isNewcomer, @Constraints.Required String email, String phone, @Constraints.Required String postalCode) {
 		this.uName = uName;
 		this.password = password;
@@ -61,4 +64,6 @@ public class User {
 		}
 	}
 	public void setLanguages(ArrayList<Language> languages) {this.languages = languages;}
+	public void setPassword(String password) {this.password = password;}
+	public boolean checkPassword(String password) {return this.password.equals(password);}
 }

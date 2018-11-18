@@ -1,23 +1,75 @@
-@*
- * This template is called from the `index` template. This template
- * handles the rendering of the page header and body tags. It takes
- * two arguments, a `String` for the title of the page and an `Html`
- * object to insert into the body of the page.
- *@
 @(title: String)(content: Html)
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        @* Here's where we render the page title `String`. *@
-        <title>@title</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
-        <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
-    </head>
-    <body>
-        @* And here's where we render the `Html` object containing
-         * the page content. *@
-        @content
-    </body>
+	<head>
+			<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+			<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="@routes.Assets.versioned("css/bootstrap.min.css")" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="@routes.Assets.versioned("css/main.css")">
+
+		<title>@title</title>
+	</head>
+	<body>
+		<nav class="navbar sticky-top navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">iReadapt - @title</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<img class="navbar-icon" src="@routes.Assets.versioned("img/menu-lines-white.svg")">
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<div class="navbar-nav">
+					<div class="row" align="center">
+						<a class="nav-link nav-item col-lg-2 col-md-3 col-sm-4 col-6" href="#" @if(title=="Home"){hidden}>
+							<img class="navbar-icon" src="@routes.Assets.versioned("img/btnHome.svg")"><br>
+							Home@if(title=="Home"){<span class="sr-only">(current)</span>}
+						</a>
+						<a class="nav-link nav-item col-lg-2 col-md-3 col-sm-4 col-6" href="#" @if(title=="Dashboard"){hidden}>
+							<img class="navbar-icon" src="@routes.Assets.versioned("img/btnDashboard.svg")"><br>
+							Dashboard@if(title=="Dashboard"){<span class="sr-only">(current)</span>}
+						</a>
+						<a class="nav-link nav-item col-lg-2 col-md-3 col-sm-4 col-6" href="#" @if(title=="Calendars"){hidden}>
+							<img class="navbar-icon" src="@routes.Assets.versioned("img/btnCalendar.svg")"><br>
+							Calendars@if(title=="Calendars"){<span class="sr-only">(current)</span>}
+						</a>
+						<a class="nav-link nav-item col-lg-2 col-md-3 col-sm-4 col-6" href="#" @if(title=="Documents"){hidden}>
+							<img class="navbar-icon" src="@routes.Assets.versioned("img/btnDocument.svg")"><br>
+							Documents@if(title=="Documents"){<span class="sr-only">(current)</span>}
+						</a>
+						<a class="nav-link nav-item col-lg-2 col-md-3 col-sm-4 col-6" href="#" @if(title=="My Subscriptions"){hidden}>
+							<img class="navbar-icon" src="@routes.Assets.versioned("img/btnSubscribed.svg")"><br>
+							My Subscriptions@if(title=="My Subscriptions"){<span class="sr-only">(current)</span>}
+						</a>
+						<a class="nav-link nav-item col-lg-2 col-md-3 col-sm-4 col-6" href="#" @if(title=="Settings"){hidden}>
+							<img class="navbar-icon" src="@routes.Assets.versioned("img/btnSettings.svg")"><br>
+							Settings@if(title=="Settings"){<span class="sr-only">(current)</span>}
+						</a>
+						<a class="nav-link nav-item col-lg-2 col-md-3 col-sm-4 col-6 order-last" href="#">
+							<img class="navbar-icon" src="@routes.Assets.versioned("img/btnLogOut.svg")"><br>
+							Log Out</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+		@if(flash.containsKey("success")){
+			<div class="alert alert-success">@flash.get("success")</div>
+		}
+
+		@content
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		@content
+		<!-- Optional JavaScript -->
+			<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="@routes.Assets.versioned("js/jquery-3.3.1.slim.min.js")" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="@routes.Assets.versioned("js/popper.js/1.14.3/umd/popper.min.js")" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="@routes.Assets.versioned("js/bootstrap.min.js")" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	</body>
 </html>
+
+
+
