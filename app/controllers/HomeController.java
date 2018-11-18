@@ -1,6 +1,7 @@
 package controllers;
 
 import models.User;
+import models.UserAuthenticator;
 import models.UserLogin;
 import play.data.Form;
 import play.data.FormFactory;
@@ -17,8 +18,8 @@ import javax.inject.Inject;
  */
 public class HomeController extends Controller {
 	private FormFactory formFactory;
-
-	@Inject public HomeController(FormFactory f) {this.formFactory = f;}
+	@Inject
+	public HomeController(FormFactory f) {this.formFactory = f;}
 
 	/**
 	 * An action that renders an HTML page with a welcome message.
@@ -27,7 +28,11 @@ public class HomeController extends Controller {
 	 * <code>GET</code> request with a path of <code>/</code>.
 	 */
 	public Result index() {
-        return ok(index.render("Your new application is ready."));
+		if(User.find.byId("q")==null) {
+			User u = new User("q", "q", "Sash", "Subba", true, "sush@subba.brainiac.com", "123-456-7890","H0H0H0");
+		}
+		Form<UserLogin> userForm = formFactory.form(UserLogin.class);
+		return ok(index.render("french", userForm));
     }
 
 	public Result setLanguage(String language){
@@ -35,7 +40,10 @@ public class HomeController extends Controller {
 		return home(language);
 	}
 
+	@Security.Authenticated(UserAuthenticator.class)
     public Result home(String language){return ok(home.render());}
+
+	@Security.Authenticated(UserAuthenticator.class)
     public Result home(){
 		String language = session().get("language");
 		if(language==null) language = "french";

@@ -2,7 +2,7 @@
 @import helper._
 @import views._
 @implicitField = @{
-	helper.FieldConstructor(shared.myFieldConstructorTemplate.f)
+	helper.FieldConstructor(all.myFieldConstructorTemplate.f)
 }
 <!doctype html>
 <html lang="@lang">
@@ -19,17 +19,18 @@
 	<body>
 		<nav class="navbar sticky-top navbar-dark bg-dark">
 			<a class="navbar-brand" href="#">iReadapt</a>
-			<!--form class="form-inline" action="@routes.HomeController.login()" method="post"-->
-			@form(action = routes.HomeController.login(), 'class -> "form-inline", 'role -> "form", 'enctype -> "multipart/form-data"){
+				<!--form class="form-inline" action="@routes.HomeController.login()" method="post"-->
+			@form(action = routes.HomeController.login(), 'class -> "form-inline", 'role -> "form", 'enctype -> "multipart/form-data") {
 				@CSRF.formField
 				@helper.inputText(myForm("userName"), 'placeholder -> "Username", 'class -> "form-control mr-sm-2")
 				@helper.inputPassword(myForm("password"), 'placeholder -> "Password", 'class -> "form-control mr-sm-2")
 				<button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
-			</form-->}
-		</nav>
-			@if(flash.containsKey("failure")) {
-				<div class="alert alert-failure">@flash.get("failure")</div>
+				</form-->
 			}
+		</nav>
+		@if(flash.containsKey("failure")) {
+			<div class="alert alert-failure">@flash.get("failure")</div>
+		}
 
 			<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="@routes.Assets.versioned("js/jquery-3.3.1.slim.min.js")" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
