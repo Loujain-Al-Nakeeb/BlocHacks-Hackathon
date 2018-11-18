@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    #checkBox{
+      height: 100px;
+      width: 150px;
+      overflow: scroll;
+    }
+    </style>
+</head>
+<body></body>
+    <h1>Post your add</h1>
+    <form>
+        Are you a donor or looking for something:<br>
+        <div id="checkBox">
+                <input type="radio" name="Test" value"1">Donor</br>
+                <input type="radio" name="Test" value"2">Looking</br>
+            </div>
+      </form>
+    <form>
+        Choose a categorie of product:
+        <div id="checkBox">
+                <input type="radio" name="Test" value"1">Goods</br>
+                <input type="radio" name="Test" value"2">Services</br>
+            </div>
+    </form>
+    
+    <form action="/action_page.php" method="post" enctype="multipart/form-data">
+        <p></p>
+        Please select an image for your product.
+        <p></p>
+        <input type="file" name="pic" id="image">
+        <input type="submit" name="submit">
+      </form>
+    </body>
+</html>
