@@ -2,7 +2,7 @@
 <html>
   <head>
     <style>
-    #overflowTest{
+    #checkBox{
       height: 100px;
       width: 150px;
       overflow: scroll;
@@ -18,48 +18,115 @@
     <meta charset = "utf-8" />
   </head>
   <body>
-      <div class="container">
-      <div class="row">
-          <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-      		<form role="form">
-      			<h2>Please Sign Up <small>It's free and always will be.</small></h2>
-      			<hr class="colorgraph">
-      			<div class="row">
-      				<div class="col-xs-12 col-sm-6 col-md-6">
-      					<div class="form-group">
-                              <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
-      					</div>
-      				</div>
-      				<div class="col-xs-12 col-sm-6 col-md-6">
-      					<div class="form-group">
-      						<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
-      					</div>
-      				</div>
-      			</div>
-      			<div class="form-group">
-      				<input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3">
-      			</div>
-      			<div class="form-group">
-      				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
-      			</div>
-      			<div class="row">
-      				<div class="col-xs-12 col-sm-6 col-md-6">
-      					<div class="form-group">
-      						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
-      					</div>
-      				</div>
-      				<div class="col-xs-12 col-sm-6 col-md-6">
-      					<div class="form-group">
-      						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
-      					</div>
-      				</div>
-      			</div>
-<div id="overflowTest">
-  <input type="checkbox" name="Test" value"1">English</br>
-  <input type="checkbox" name="Test" value"2">French</br>
-  <input type="checkbox" name="Test" value"3">Spanish</br>
-  <input type="checkbox" name="Test" value"4">German</br>
+		<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+			<form role="form">
+			  <h2>Please Sign Up <small>It's free and always will be.</small></h2>
+			  <hr class="colorgraph">
+			  <div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+				  <div class="form-group">
+								<input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+				  </div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+				  <div class="form-group">
+					<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+				  </div>
+				</div>
+			  </div>
+   
+   
+		  <div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6">
+			  <div class="form-group">
+				<input type="text" name="age" id="age" class="form-control input-lg" placeholder="Age" tabindex="1">
+			  </div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6">
+			  <div class="form-group">
+				<input type="text" name="sex" id="sex" class="form-control input-lg" placeholder="Sex" tabindex="2">
+			  </div>
+			</div>
+		  </div>
+   
+   
+   
+   
+			  <div class="form-group">
+				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+			  </div>
+   
+   
+		  <div class="form-group">
+			<input type="email" name="phoneNum" id="phoneNum" class="form-control input-lg" placeholder="Phone Number" tabindex="4">
+		  </div>
+   
+   
+		  <div class="form-group">
+			<input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="User Name" tabindex="3">
+		  </div>
+   
+		  <div class="form-group">
+			<input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="User Name" tabindex="3">
+		  </div>
+   
+   
+		  <div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+				  <div class="form-group">
+					<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+				  </div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+				  <div class="form-group">
+					<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+				  </div>
+				</div>
+			  </div>
+			  <section>
+					<font size="3">
+					<p>Are you a newcomer or local?</p>
+				  </font>
+				  </section>
+<div id="checkBox">
+	<input type="checkbox" name="Test" value"1">Newcomer</br>
+	<input type="checkbox" name="Test" value"2">Local</br>
 </div>
+			   <section>
+				 <font size="3">
+					<p></p>
+				 	<p>Select the languages you speak and/or write</p>
+			   </font>
+			   </section>
+<div id="checkBox">
+	
+				<%  var language;
+				for language in languages {%>
+					<input type="checkbox" name="Test" value"1">language</br>
+				}%>  
+			
+				<input type="checkbox" name="Test" value"1">English</br>
+				<input type="checkbox" name="Test" value"2">French</br>
+				<input type="checkbox" name="Test" value"3">Spanish</br>
+				<input type="checkbox" name="Test" value"4">German</br>
+				<input type="checkbox" name="Test" value"5">Italian</br>
+				<input type="checkbox" name="Test" value"6">Arabic</br>
+				<input type="checkbox" name="Test" value"7">Nepali</br>
+				<input type="checkbox" name="Test" value"8">Afrikaans</br>
+				<input type="checkbox" name="Test" value"9">Portuguese</br>
+				<input type="checkbox" name="Test" value"10">Farsi</br>
+				<input type="checkbox" name="Test" value"11">Hebrew</br>
+				<input type="checkbox" name="Test" value"12">Estonian</br>
+				<input type="checkbox" name="Test" value"13">Hungarian</br>
+				<input type="checkbox" name="Test" value"14">Indonesian</br>
+				<input type="checkbox" name="Test" value"15">Letvian</br>
+				<input type="checkbox" name="Test" value"16">Hindi</br>
+				<input type="checkbox" name="Test" value"17">Croatian</br>
+
+</div>
+<p></p>
  <div id = "output">
  </div>
       			<div class="row">
