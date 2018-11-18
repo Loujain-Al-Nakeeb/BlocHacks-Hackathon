@@ -1,4 +1,5 @@
 package models;
 
-public class ArtLesson {
+public class ArtLesson extends Services {
+    Art art;
 }

@@ -1,4 +1,5 @@
 package models;
 
-public class MusicLesson {
+public class MusicLesson extends Services {
+
 }

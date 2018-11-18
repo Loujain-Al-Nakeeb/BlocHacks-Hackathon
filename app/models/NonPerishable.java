@@ -1,6 +1,5 @@
 package models;
 
-public class Services
-{
+public class NonPerishable {
     //empty
 }
